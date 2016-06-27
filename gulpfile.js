@@ -6,14 +6,14 @@ gulp.task('default', ['index','comboSass', 'sass', 'watch']);
 
 gulp.task('watch', function(){
     
-    gulp.watch('server/client/views/index.html', ['index']);
+    gulp.watch('server/client/views/*.html', ['index']);
     gulp.watch('server/client/styles/scss/*.scss', ['comboSass']);
     gulp.watch('server/client/styles/style.scss', ['sass']);
     
 });
 
 gulp.task('index', function(){
-   return gulp.src('server/client/views/index.html')
+   return gulp.src('server/client/views/*.html')
           .pipe(gulp.dest('server/public/views/')); 
     
 });
